@@ -4,171 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sri Velan Sweets & Bakery</title>
-    
-    <!-- Stable, Verified CDNs -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Safe Inline Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👑</text></svg>">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            background-color: #FFFDF4; 
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .font-royal-3d {
-            font-family: 'Cinzel Decorative', serif;
-            font-weight: 900;
-        }
-
-        /* BRIGHT ROYAL CREAM & GOLD RADIAL BACKGROUND */
-        .murugan-bg {
-            min-height: 100vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center;     
-            background: radial-gradient(circle at 50% 50%, #FFFDF4 0%, #FFF9D4 50%, #FCEFA7 100%);
-            padding-top: 60px; 
-            padding-bottom: 100px;
-            overflow: hidden;
-        }
-
-        /* Star Geometric Tile Grid Pattern Overlay */
-        .murugan-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            opacity: 0.12; 
-            pointer-events: none;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="%23D4AF37" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.41l8.2-1.192z"/></svg>');
-            background-size: 55px 55px;
-            z-index: 0;
-        }
-
-        /* Elegant Golden Light Divider Bar underneath Navbar */
-        .golden-divider-line {
-            height: 4px;
-            width: 100%;
-            background: linear-gradient(to right, #FF8C00 0%, #D4AF37 35%, #9E0012 50%, #D4AF37 65%, #FF8C00 100%);
-            position: fixed;
-            top: 56px; 
-            left: 0;
-            z-index: 45;
-            box-shadow: 0 3px 12px rgba(212, 175, 55, 0.4);
-        }
-
-        @media (min-width: 768px) {
-            .golden-divider-line {
-                top: 64px;
-            }
-        }
-        
-        .logo-glow-ring {
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-        }
-
-        /* METALLIC GOLD TYPOGRAPHY STYLES */
-        .text-3d-gold-premium {
-            background: linear-gradient(to bottom, #9E0012 0%, #C41226 40%, #D4AF37 80%, #A07811 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0px 2px 2px rgba(212, 175, 55, 0.3));
-        }
-
-        /* SOLID HIGH-CONTRAST TEXT GRADIENT */
-        .text-solid-gradient {
-            background: linear-gradient(to right, #9E0012, #D4AF37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* PERFORMANCE CSS TYPEWRITING SYSTEM */
-        .smooth-type-wrap {
-            display: inline-block;
-            position: relative;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-        }
-
-        .type-line-1 {
-            animation: typeSequence1 1.2s steps(9, end) 0.6s forwards;
-            border-right: 3px solid transparent;
-        }
-
-        .type-line-2 {
-            animation: typeSequence2 1.4s steps(15, end) 2.0s forwards;
-            border-right: 3px solid transparent;
-        }
-
-        @keyframes typeSequence1 {
-            0% { width: 0; border-right-color: #9E0012; }
-            99% { border-right-color: #9E0012; }
-            100% { width: 100%; border-right-color: transparent; }
-        }
-
-        @keyframes typeSequence2 {
-            0% { width: 0; border-right-color: #9E0012; }
-            99% { border-right-color: #9E0012; }
-            100% { width: 100%; border-right-color: transparent; }
-        }
-
-        /* Cinematic Reveal Animations */
-        .intro-reveal-box {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: cinematicRiseUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 3.5s forwards;
-        }
-
-        @keyframes cinematicRiseUp {
-            0% { opacity: 0; transform: translateY(25px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in-entry {
-            opacity: 0;
-            transform: translateY(-10px);
-            animation: subtleSlideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .scroll-indicator-fade {
-            opacity: 0;
-            animation: pureFadeIn 1.5s ease-in-out 4.8s forwards;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow-x: hidden; background-color: #FFFDF4; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .font-royal-3d { font-family: 'Cinzel Decorative', serif; font-weight: 900; }
+        .murugan-bg { min-height: 100vh; width: 100%; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at 50% 50%, #FFFDF4 0%, #FFF9D4 50%, #FCEFA7 100%); padding-top: 60px; padding-bottom: 100px; overflow: hidden; }
+        .murugan-bg::after { content: ''; position: absolute; inset: 0; opacity: 0.12; pointer-events: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24"><path fill="%23D4AF37" d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.41l8.2-1.192z"/></svg>'); background-size: 55px 55px; z-index: 0; }
+        .golden-divider-line { height: 4px; width: 100%; background: linear-gradient(to right, #FF8C00 0%, #D4AF37 35%, #9E0012 50%, #D4AF37 65%, #FF8C00 100%); position: fixed; top: 56px; left: 0; z-index: 45; box-shadow: 0 3px 12px rgba(212, 175, 55, 0.4); }
+        @media (min-width: 768px) { .golden-divider-line { top: 64px; } }
+        .logo-glow-ring { box-shadow: 0 0 15px rgba(212, 175, 55, 0.5); }
+        .text-3d-gold-premium { background: linear-gradient(to bottom, #9E0012 0%, #C41226 40%, #D4AF37 80%, #A07811 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0px 2px 2px rgba(212, 175, 55, 0.3)); }
+        .text-solid-gradient { background: linear-gradient(to right, #9E0012, #D4AF37); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .smooth-type-wrap { display: inline-block; position: relative; white-space: nowrap; overflow: hidden; width: 0; }
+        .type-line-1 { animation: typeSequence1 1.2s steps(9, end) 0.6s forwards; border-right: 3px solid transparent; }
+        .type-line-2 { animation: typeSequence2 1.4s steps(15, end) 2.0s forwards; border-right: 3px solid transparent; }
+        @keyframes typeSequence1 { 0% { width: 0; border-right-color: #9E0012; } 99% { border-right-color: #9E0012; } 100% { width: 100%; border-right-color: transparent; } }
+        @keyframes typeSequence2 { 0% { width: 0; border-right-color: #9E0012; } 99% { border-right-color: #9E0012; } 100% { width: 100%; border-right-color: transparent; } }
+        .intro-reveal-box { opacity: 0; transform: translateY(20px); animation: cinematicRiseUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) 3.5s forwards; }
+        @keyframes cinematicRiseUp { 0% { opacity: 0; transform: translateY(25px); } 100% { opacity: 1; transform: translateY(0); } }
+        .fade-in-entry { opacity: 0; transform: translateY(-10px); animation: subtleSlideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .scroll-indicator-fade { opacity: 0; animation: pureFadeIn 1.5s ease-in-out 4.8s forwards; }
         @keyframes subtleSlideIn { to { opacity: 1; transform: translateY(0); } }
         @keyframes pureFadeIn { to { opacity: 0.8; } }
-
-        /* BRIGHT LUXURY STORY CARD STYLES */
-        .story-gradient-card {
-            background: #FFFFFF;
-            border: 2px solid #FCEFA7;
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
-        }
+        .story-gradient-card { background: #FFFFFF; border: 2px solid #FCEFA7; box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15); }
     </style>
 </head>
 <body>
 
-    <!-- RESPONSIVE HEADER NAV (SITS PERFECTLY AT THE VERY TOP) -->
     <nav class="fixed top-0 left-0 right-0 h-14 md:h-16 z-40 backdrop-blur-md px-3 md:px-8 flex justify-between items-center shadow-md select-none" style="background-color: rgba(255, 253, 244, 0.96); border-b: 1px solid rgba(212, 175, 55, 0.25);">
-        
-        <!-- LOGO LAYOUT BLOCK -->
         <div class="flex items-center space-x-2 min-w-0 flex-1">
             <div class="logo-glow-ring bg-gradient-to-br from-amber-100 to-yellow-300 p-1 rounded-full border border-amber-400/60 w-9 h-9 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center overflow-hidden">
                 <svg viewBox="0 0 100 100" class="w-6 h-6 md:w-9 md:h-9 filter drop-shadow-sm" xmlns="http://www.w3.org/2000/svg">
@@ -183,22 +53,17 @@
                 <span class="text-amber-600 text-[7px] md:text-[9px] uppercase tracking-widest block font-bold whitespace-nowrap mt-0.5">Sweets & Bakery</span>
             </div>
         </div>
-
-        <!-- DESKTOP OPTIONS PANEL -->
         <div class="hidden md:flex items-center space-x-6 text-xs font-bold tracking-widest uppercase">
             <a href="#home" class="text-red-700 transition-all duration-200">Home</a>
             <a href="#story" class="text-amber-700 hover:text-red-700 transition-all duration-200">Our Story</a>
             <a href="#items" class="text-amber-700 hover:text-red-700 transition-all duration-200">Our Items</a>
             <a href="#contact" class="text-amber-700 hover:text-red-700 transition-all duration-200">Contact</a>
-            
             <button onclick="toggleCartTray(true)" class="relative bg-red-700 hover:bg-red-800 text-white font-extrabold px-4 py-2 rounded-xl text-[10px] tracking-widest uppercase flex items-center space-x-2 transition-all duration-200 shadow-md">
                 <i class="fa-solid fa-basket-shopping text-xs"></i>
                 <span>View Cart</span>
                 <span id="nav-cart-badge" class="bg-yellow-400 text-red-950 font-black px-1.5 py-0.5 rounded-md text-[9px] ml-1">0</span>
             </button>
         </div>
-
-        <!-- MOBILE HEAD CART LINK -->
         <div class="flex md:hidden items-center flex-shrink-0 pl-2">
             <button onclick="toggleCartTray(true)" class="relative p-2 text-red-700 focus:outline-none">
                 <i class="fa-solid fa-basket-shopping text-lg"></i>
@@ -209,7 +74,6 @@
 
     <div class="golden-divider-line" style="top: 56px;"></div>
 
-    <!-- HOME HERO SECTION -->
     <div id="home" class="murugan-bg px-4 z-10" style="padding-top: 80px;">
         <div class="w-full max-w-5xl mx-auto text-center z-10 select-none flex flex-col items-center justify-center space-y-3 md:space-y-4">
             <div class="fade-in-entry bg-red-600/10 text-red-700 font-bold tracking-widest uppercase text-[9px] sm:text-xs px-4 py-1 rounded-full mb-1 border border-red-600/20">
@@ -226,14 +90,12 @@
                 <p class="text-red-950 text-xs sm:text-base font-medium leading-relaxed tracking-wide">Bringing you generations of sweet traditions and freshly-baked crafts, meticulously prepared to carry blessings in every single bite.</p>
             </div>
         </div>
-        
         <div class="absolute bottom-20 md:bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-1 scroll-indicator-fade text-red-700 font-semibold tracking-widest text-[8px] uppercase">
             <span>Scroll</span>
             <i class="fa-solid fa-chevron-down text-xs animate-bounce mt-1"></i>
         </div>
     </div>
 
-    <!-- OUR STORY SECTION -->
     <section id="story" class="relative w-full bg-white py-16 md:py-24 px-4 md:px-12 lg:px-24 border-t border-amber-500/20 overflow-hidden">
         <div class="relative max-w-7xl mx-auto z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
             <div class="lg:col-span-5 space-y-4 md:space-y-6">
@@ -254,7 +116,6 @@
         </div>
     </section>
 
-    <!-- MENU SELECTION GRID -->
     <section id="items" class="w-full py-16 md:py-24 px-4 md:px-12 lg:px-24 bg-stone-50 border-t border-amber-500/10">
         <div class="max-w-7xl mx-auto space-y-8 md:space-y-12">
             <div class="text-center space-y-1">
@@ -266,7 +127,6 @@
         </div>
     </section>
 
-    <!-- CONTACT DETAILS -->
     <section id="contact" class="w-full py-16 px-4 md:px-12 lg:px-24 bg-white border-t border-amber-500/20" style="padding-bottom: 100px;">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div class="space-y-4">
@@ -274,9 +134,7 @@
                     <span class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-red-600 block">Get In Touch</span>
                     <h2 class="text-2xl md:text-4xl font-extrabold text-red-950 uppercase">Connect With Our Bakery</h2>
                 </div>
-                <p class="text-stone-600 text-xs md:text-sm font-medium leading-relaxed">
-                    Have questions about festival pre-orders, custom bakery items, or bulk catering requests? Reach out to our flagship outlet directly.
-                </p>
+                <p class="text-stone-600 text-xs md:text-sm font-medium leading-relaxed">Have questions about festival pre-orders, custom bakery items, or bulk catering requests? Reach out to our flagship outlet directly.</p>
                 <div class="space-y-3 pt-1">
                     <div class="flex items-start space-x-3 p-3 rounded-xl bg-stone-50 border border-stone-200">
                         <div class="text-red-700 text-base pt-0.5"><i class="fa-solid fa-phone-flip"></i></div>
@@ -289,14 +147,11 @@
                         <div class="text-red-700 text-base pt-0.5"><i class="fa-solid fa-map-location-dot"></i></div>
                         <div>
                             <h4 class="text-red-950 font-extrabold text-[10px] uppercase tracking-wider">Flagship Location</h4>
-                            <p class="text-stone-700 font-medium text-xs leading-relaxed">
-                                89, Main Road, Arumparthapuram, Puducherry, 605110
-                            </p>
+                            <p class="text-stone-700 font-medium text-xs leading-relaxed">89, Main Road, Arumparthapuram, Puducherry, 605110</p>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="p-5 bg-gradient-to-br from-amber-50 to-yellow-100 rounded-2xl border-2 border-yellow-300 flex flex-col justify-between shadow-sm min-h-[160px]">
                 <div class="space-y-1">
                     <span class="bg-red-700 text-white font-bold text-[8px] uppercase tracking-widest px-2.5 py-0.5 rounded-md inline-block">Store Hours</span>
@@ -311,7 +166,6 @@
         </div>
     </section>
 
-    <!-- MOBILE STICKY BOTTOM NAVIGATION BAR -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-stone-200 shadow-lg z-40 flex md:hidden justify-around items-center h-16 px-2 pb-1">
         <a href="#home" class="flex flex-col items-center justify-center text-center text-stone-500 hover:text-red-700 transition-all">
             <i class="fa-solid fa-house text-lg"></i>
@@ -332,10 +186,8 @@
         </button>
     </div>
 
-    <!-- SHOPPING CART SLIDE OVERLAY TRAY -->
     <div id="cart-tray-overlay" class="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-sm hidden justify-end transition-all duration-300">
         <div class="w-full sm:w-96 bg-white h-full shadow-2xl flex flex-col justify-between border-l-2 border-amber-400">
-            
             <div class="bg-gradient-to-r from-red-800 to-red-950 p-4 text-white flex justify-between items-center border-b-2 border-amber-400">
                 <div class="flex items-center space-x-2">
                     <i class="fa-solid fa-basket-shopping text-yellow-400 text-base"></i>
@@ -343,9 +195,7 @@
                 </div>
                 <button onclick="toggleCartTray(false)" class="text-stone-300 hover:text-white text-xs uppercase font-bold tracking-wider">Close <i class="fa-solid fa-xmark ml-1"></i></button>
             </div>
-
             <div id="cart-items-container" class="p-3 overflow-y-auto flex-1 space-y-3 bg-stone-50"></div>
-
             <div class="p-4 bg-white border-t border-stone-200 space-y-3 shadow-inner mb-16 md:mb-0">
                 <div class="space-y-1 text-xs font-semibold text-stone-600">
                     <div class="flex justify-between"><span>Subtotal:</span><span id="bill-subtotal" class="text-stone-900">₹0</span></div>
@@ -353,7 +203,6 @@
                     <div class="w-full h-px bg-stone-200 my-1"></div>
                     <div class="flex justify-between text-sm font-black text-red-950"><span>ESTIMATED TOTAL:</span><span id="bill-net-total">₹0</span></div>
                 </div>
-
                 <div class="pt-1">
                     <button id="btn-proceed-checkout" onclick="openCheckoutDashboard()" class="w-full bg-red-700 hover:bg-red-800 text-white font-extrabold py-3 rounded-xl uppercase tracking-widest text-xs transition-all shadow-md flex items-center justify-center space-x-2">
                         <span>Proceed to Pay</span> <i class="fa-solid fa-circle-arrow-right"></i>
@@ -363,15 +212,12 @@
         </div>
     </div>
 
-    <!-- ORDERING DIALOG DESK -->
     <div id="checkout-dashboard-modal" class="fixed inset-0 z-50 overflow-y-auto bg-stone-900/70 backdrop-blur-md hidden items-center justify-center p-3">
         <div class="bg-white rounded-2xl max-w-md w-full shadow-2xl border-2 border-amber-400 overflow-hidden flex flex-col my-auto">
-            
             <div class="bg-red-900 text-white p-4 flex justify-between items-center border-b border-amber-400">
                 <h3 class="font-extrabold uppercase text-[10px] tracking-wider flex items-center"><i class="fa-solid fa-wallet mr-2 text-yellow-400"></i> Ordering Desk</h3>
                 <button onclick="closeCheckoutDashboard()" class="text-red-200 hover:text-white text-xs font-bold uppercase">Back</button>
             </div>
-
             <div class="p-4 space-y-4 overflow-y-auto max-h-[70vh] bg-stone-50">
                 <div class="space-y-2">
                     <label class="block text-[10px] font-black text-red-950 uppercase tracking-wider">Choose Fulfillment Method</label>
@@ -384,20 +230,15 @@
                         </button>
                     </div>
                 </div>
-
                 <div id="checkout-pickup-box" class="hidden bg-amber-50 border border-amber-300 rounded-xl p-3 text-center space-y-2">
                     <h4 class="font-bold text-amber-900 text-[10px] uppercase tracking-wider">📢 Counter Billing Mode</h4>
-                    <p class="text-amber-950 text-xs font-medium leading-relaxed">
-                        Pay directly at the bakery billing counter when you pick up your order. Your items will be packaged and ready!
-                    </p>
+                    <p class="text-amber-950 text-xs font-medium leading-relaxed">Pay directly at the bakery billing counter when you pick up your order. Your items will be packaged and ready!</p>
                 </div>
-
                 <div id="checkout-delivery-box" class="hidden space-y-4">
                     <div class="space-y-2">
                         <label class="block text-[10px] font-black text-red-950 uppercase tracking-wider">Delivery Destination Address</label>
                         <input type="text" id="chk-delivery-address" placeholder="Type your local colony / street name" class="w-full p-2.5 text-xs border rounded-xl font-semibold text-stone-900 bg-white focus:outline-none focus:ring-1 focus:ring-amber-500">
                     </div>
-
                     <div class="space-y-2">
                         <label class="block text-[10px] font-black text-red-950 uppercase tracking-wider">Select Payment Channel</label>
                         <div class="grid grid-cols-2 gap-2">
@@ -405,7 +246,6 @@
                             <button id="pay-gpay-btn" onclick="setPaymentChannel('GPAY')" class="py-2 rounded-xl border font-bold text-[11px] uppercase tracking-wider transition-all text-emerald-700 border-emerald-200 bg-emerald-50"><i class="fa-brands fa-google-pay text-base mr-1"></i> Pay via GPay</button>
                         </div>
                     </div>
-
                     <div class="bg-white p-3 rounded-xl border border-stone-200 text-xs font-medium text-stone-700">
                         <h4 class="font-extrabold text-red-950 uppercase tracking-wider text-[10px] border-b pb-1 mb-2"><i class="fa-solid fa-receipt mr-1"></i> Delivery Invoice Summary</h4>
                         <div id="invoice-items-rows" class="space-y-1 border-b pb-2 mb-2"></div>
@@ -416,24 +256,30 @@
                         </div>
                     </div>
                 </div>
-
                 <button onclick="finalizeOrderPipeline()" class="w-full bg-red-700 hover:bg-red-800 text-white font-extrabold py-3 rounded-xl uppercase tracking-widest text-xs shadow-md transition-all">Place Order Confirm</button>
             </div>
         </div>
     </div>
 
-    <!-- ENGINE SCRIPTS BUS -->
     <script>
+        const FIREBASE_DB_URL = "https://sri-velan-bakery-default-rtdb.firebaseio.com"; 
+        
         let itemsDatabase = [];
         let shoppingCart = {};
         let cardQtyState = {}; 
         let selectedMethod = "pickup"; 
         let selectedPayment = "COD"; 
 
-        function synchronizeCustomerUI() {
-            itemsDatabase = JSON.parse(localStorage.getItem("velan_inventory")) || [];
+        async function synchronizeCustomerUI() {
+            try {
+                const response = await fetch(`${FIREBASE_DB_URL}/inventory.json`);
+                const data = await response.json();
+                itemsDatabase = data ? Object.values(data).filter(item => item !== null) : [];
+            } catch (err) {
+                console.error("Firebase cloud error:", err);
+                itemsDatabase = [];
+            }
 
-            // Render Products Grid
             const productsGrid = document.getElementById("customer-products-grid");
             productsGrid.innerHTML = "";
 
@@ -443,7 +289,7 @@
                     <div class="text-center space-y-2 p-6 border-2 border-dashed border-amber-200 rounded-2xl bg-white max-w-sm mx-auto">
                         <div class="text-amber-500 text-2xl"><i class="fa-solid fa-cookie-bite"></i></div>
                         <h4 class="text-red-950 font-bold uppercase text-xs tracking-wider">Menu Preparing</h4>
-                        <p class="text-stone-500 text-xs">Our chefs are preparing fresh daily configurations.</p>
+                        <p class="text-stone-500 text-xs">Our chefs are updating configuration options live.</p>
                     </div>`;
                 return;
             }
@@ -471,7 +317,6 @@
                                 </div>
                             </div>
                         </div>
-
                         ${!product.isSoldOut ? `
                             <div class="flex items-center justify-between bg-stone-50 p-1.5 rounded-lg border border-stone-200 text-xs">
                                 <span class="font-bold text-stone-500 text-[9px] uppercase tracking-wider">Qty:</span>
@@ -482,7 +327,6 @@
                                 </div>
                             </div>
                         ` : ''}
-                        
                         <button onclick="${product.isSoldOut ? '' : `commitCardItemsToCart(${product.id})`}" class="w-full py-2 rounded-lg font-bold uppercase tracking-wider text-[9px] border transition-all ${product.isSoldOut ? 'bg-stone-100 text-stone-400 border-stone-200 cursor-not-allowed' : 'bg-amber-50 border-amber-300 text-amber-800 hover:bg-red-700 hover:text-white hover:border-red-700'}" ${product.isSoldOut ? 'disabled' : ''}>
                             <i class="fa-solid fa-cart-plus mr-1"></i> Add To Basket
                         </button>
@@ -533,13 +377,11 @@
             const listContainer = document.getElementById("cart-items-container");
             let subtotal = 0;
             let totalQty = 0;
-
             listContainer.innerHTML = "";
 
             Object.keys(shoppingCart).forEach(id => {
                 const product = itemsDatabase.find(p => p.id == id);
                 if (!product) return;
-
                 const qty = shoppingCart[id];
                 const lineCost = product.discountPrice * qty;
                 subtotal += lineCost;
@@ -657,7 +499,7 @@
             document.getElementById("inv-net").innerText = `₹${subtotal - discount}`;
         }
 
-        function finalizeOrderPipeline() {
+        async function finalizeOrderPipeline() {
             let customerAddress = "In-Store Pickup Counter";
             let finalDistance = 0;
             let finalHtmlEta = 0;
@@ -681,45 +523,40 @@
                 finalHtmlEta = finalDistance <= 3 ? 20 : Math.round(20 + ((finalDistance - 3) * 4));
             }
 
-            // CLEAN, STANDARD STABLE PARSING PIPELINE FOR HIGH UX CONVERSION
-            if (selectedMethod === 'delivery' && selectedPayment === 'GPAY') {
-                const merchantVPA = "jagdeepneelesh@oksbi"; // Put your exact personal or store UPI ID string here
-                const storeLabel = encodeURIComponent("Sri Velan Sweets and Bakery");
-                const upiIntentString = `upi://pay?pa=${merchantVPA}&pn=${storeLabel}&am=${netTotal}&cu=INR`;
-                
-                window.location.href = upiIntentString;
-                pushOrderRecord(customerAddress, finalDistance, finalHtmlEta, netTotal, "GPay Mobile App");
-            } else {
-                pushOrderRecord(customerAddress, finalDistance, finalHtmlEta, netTotal, selectedPayment);
-            }
-        }
-
-        function pushOrderRecord(address, distance, eta, netTotal, paymentLabel) {
-            const currentOrders = JSON.parse(localStorage.getItem("velan_orders")) || [];
-            const itemsMeta = Object.keys(shoppingCart).map(id => {
-                const prod = itemsDatabase.find(p => p.id == id);
-                return { name: prod ? prod.name : "Menu Item", qty: shoppingCart[id] };
-            });
-
-            currentOrders.push({
+            const orderPayload = {
                 id: Date.now(),
                 timestamp: Date.now(),
                 method: selectedMethod,
-                payment: paymentLabel,
-                address: address,
-                distanceKm: distance,
-                etaMinutes: eta,
-                items: itemsMeta,
+                payment: selectedPayment,
+                address: customerAddress,
+                distanceKm: finalDistance,
+                etaMinutes: finalHtmlEta,
+                items: Object.keys(shoppingCart).map(id => {
+                    const prod = itemsDatabase.find(p => p.id == id);
+                    return { name: prod ? prod.name : "Bakery Item", qty: shoppingCart[id] };
+                }),
                 totalPayable: netTotal,
                 status: "pending"
-            });
+            };
 
-            localStorage.setItem("velan_orders", JSON.stringify(currentOrders));
+            try {
+                await fetch(`${FIREBASE_DB_URL}/orders.json`, {
+                    method: 'POST',
+                    body: JSON.stringify(orderPayload)
+                });
 
-            if (selectedMethod === 'pickup') {
-                alert("🎉 Order submitted! Collect your items at the billing counter.");
-            } else {
-                alert(`🎉 Delivery Confirmed via [${paymentLabel}]! Reaching you in ~${eta} Mins.`);
+                if (selectedMethod === 'delivery' && selectedPayment === 'GPAY') {
+                    // Update this placeholder with your exact personal UPI handle when testing apps
+                    const merchantVPA = "08870711516@okbizaxis"; 
+                    const storeLabel = encodeURIComponent("Sri Velan Sweets and Bakery");
+                    window.location.href = `upi://pay?pa=${merchantVPA}&pn=${storeLabel}&am=${netTotal}&cu=INR`;
+                } else {
+                    alert(selectedMethod === 'pickup' 
+                        ? "🎉 Order submitted! Collect your items at the counter."
+                        : `🎉 Delivery Confirmed! Reaching you in ~${finalHtmlEta} Mins.`);
+                }
+            } catch (err) {
+                alert("Database connection dropped.");
             }
 
             shoppingCart = {};
@@ -729,7 +566,7 @@
             synchronizeCustomerUI();
         }
 
-        window.addEventListener('storage', synchronizeCustomerUI);
+        setInterval(synchronizeCustomerUI, 7000);
         document.addEventListener("DOMContentLoaded", synchronizeCustomerUI);
     </script>
 </body>
